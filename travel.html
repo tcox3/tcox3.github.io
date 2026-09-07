@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Travel - Taylor Cox</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/globe.gl@2.46.2/dist/globe.gl.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/lucide@0.468.0/dist/umd/lucide.min.js"></script>
+  <script defer src="travel-data.js"></script>
+  <script defer src="travel.js"></script>
+</head>
+<body class="travel-page">
+
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="site-name">Taylor Cox</a>
+      <ul>
+        <li><a href="index.html">About</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="data.html">Data</a></li>
+        <li><a href="teaching.html">Teaching</a></li>
+        <li><a href="cv.html">CV</a></li>
+        <li><a href="travel.html" class="active">Travel</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <header class="travel-heading">
+      <div>
+        <h1>Travel</h1>
+        <p>Places I've lived/ visited and some photos!</p>
+      </div>
+      <a href="#destinations">Destinations <span aria-hidden="true">&darr;</span></a>
+    </header>
+
+    <section class="travel-stage" aria-label="Travel globe and photographs" hidden>
+      <div class="globe-surface" hidden>
+        <div id="travel-globe" role="img" aria-label="Interactive Earth with travel destinations. All destinations are also available in the list below."></div>
+        <section id="marker-choices" aria-label="Nearby destinations" hidden>
+          <div class="marker-choices-heading">
+            <h3>Nearby destinations</h3>
+            <button type="button" id="marker-choices-close" class="travel-icon" aria-label="Close destination choices" title="Close destination choices"><i data-lucide="x" aria-hidden="true">&times;</i></button>
+          </div>
+          <div id="marker-options"></div>
+        </section>
+        <div class="globe-tools" role="group" aria-label="Globe controls">
+          <button type="button" id="globe-zoom-in" class="travel-icon" aria-label="Zoom in" title="Zoom in"><i data-lucide="plus" aria-hidden="true">+</i></button>
+          <button type="button" id="globe-zoom-out" class="travel-icon" aria-label="Zoom out" title="Zoom out"><i data-lucide="minus" aria-hidden="true">&minus;</i></button>
+          <button type="button" id="globe-reset" class="travel-icon" aria-label="Reset globe view" title="Reset globe view"><i data-lucide="rotate-ccw" aria-hidden="true">&#8634;</i></button>
+          <button type="button" id="globe-rotate" class="travel-icon" aria-label="Rotate globe" aria-pressed="false" title="Rotate globe"><i data-lucide="orbit" aria-hidden="true">&#9678;</i></button>
+        </div>
+        <a class="earth-credit" href="https://visibleearth.nasa.gov/collection/1484/blue-marble">Earth imagery: NASA</a>
+      </div>
+
+      <section id="travel-gallery" class="travel-gallery" aria-labelledby="gallery-title" hidden>
+        <div class="gallery-heading">
+          <div>
+            <p id="gallery-country"></p>
+            <h2 id="gallery-title" tabindex="-1"></h2>
+          </div>
+          <button type="button" id="gallery-close" class="travel-icon" aria-label="Close gallery" title="Close gallery"><i data-lucide="x" aria-hidden="true">&times;</i></button>
+        </div>
+        <figure class="gallery-photo">
+          <a id="gallery-image-link" target="_blank" rel="noopener" aria-label="Open photograph in a new tab"><img id="gallery-image" alt="" decoding="async" /></a>
+        </figure>
+        <div class="gallery-controls" role="group" aria-label="Photo navigation">
+          <button type="button" id="gallery-previous" class="travel-icon" aria-label="Previous photo" title="Previous photo"><i data-lucide="arrow-left" aria-hidden="true">&larr;</i></button>
+          <span id="gallery-count" role="status" aria-live="polite" aria-atomic="true"></span>
+          <button type="button" id="gallery-next" class="travel-icon" aria-label="Next photo" title="Next photo"><i data-lucide="arrow-right" aria-hidden="true">&rarr;</i></button>
+        </div>
+      </section>
+    </section>
+
+    <section class="travel-destinations" id="destinations" aria-labelledby="destinations-title">
+      <div class="destination-heading">
+        <h2 id="destinations-title">Destinations</h2>
+      </div>
+      <div class="destination-list">
+        <!-- TRAVEL_ARCHIVE_START -->
+        <details data-destination="abu-dhabi">
+          <summary>Abu Dhabi<span>United Arab Emirates &middot; 1 photo</span></summary>
+          <div class="destination-photos">
+            <a href="img/travel-web/abu_dhabi.jpg"><img src="img/travel-web/abu_dhabi.jpg" alt="Abu Dhabi, United Arab Emirates" loading="lazy" decoding="async" width="800" height="600" /></a>
+          </div>
+        </details>
+        <details data-destination="athens">
+          <summary>Athens<span>Greece &middot; 3 photos</span></summary>
+          <div class="destination-photos">
+            <a href="img/travel-web/athens.jpg"><img src="img/travel-web/athens.jpg" alt="Athens, Greece" loading="lazy" decoding="async" width="800" height="600" /></a>
+            <a href="img/travel-web/athens1.jpg"><img src="img/travel-web/athens1.jpg" alt="Athens, Greece" loading="lazy" decoding="async" width="800" height="600" /></a>
+            <a href="img/travel-web/athens2.jpg"><img src="img/travel-web/athens2.jpg" alt="Athens, Greece" loading="lazy" decoding="async" width="800" height="600" /></a>
+          </div>
+        </details>
+        <details data-destination="austin">
+          <summary>Austin, Texas<span>United States &middot; 1 photo</span></summary>
+          <div class="destination-photos">
+            <a href="img/travel-web/austin.jpg"><img src="img/travel-web/austin.jpg" alt="Austin, Texas, United States" loading="lazy" decoding="async" width="800" height="600" /></a>
+          </div>
+        </details>
+        <details data-destination="bad-gastein">
+          <summary>Bad Gastein<span>Austria &middot; 2 photos</span></summary>
+          <div class="destination-photos">
+            <a href="img/travel-web/bad_gastien.jpg"><img src="img/travel-web/bad_gastien.jpg" alt="Bad Gastein, Austria" loading="lazy" decoding="async" width="800" height="600" /></a>
+            <a href="img/travel-web/bad_gastien2.jpg"><img src="img/travel-web/bad_gastien2.jpg" alt="Bad Gastein, Austria" loading="lazy" decoding="async" width="800" height="600" /></a>
+          </div>
+        </details>
+        <details data-destination="bahamas">
+          <summary>Bahamas<span>Bahamas &middot; 1 photo</span></summary>
+          <div class="destination-photos">
+            <a href="img/travel-web/bahamas.jpg"><img src="img/travel-web/bahamas.jpg" alt="Bahamas, Bahamas" loading="lazy" decoding="async" width="800" height="600" /></a>
+          </div>
+        </details>
+        <details data-destination="canada">
+          <summary>Canada<span>Canada &middot; 1 photo</span></summary>
+          <div class="destination-photos">
+            <a href="img/travel-web/canada.jpg"><img src="img/travel-web/canada.jpg" alt="Canada, Canada" loading="lazy" decoding="async" width="800" height="600" /></a>
+          </div>
+        </details>
+        <details data-destination="china">
+          <summary>China<span>China &middot; 1 photo</span></summary>
+          <div class="destination-photos">
+            <a href="img/travel-web/china.jpg"><img src="img/travel-web/china.jpg" alt="China, China" loading="lazy" decoding="async" width="800" height="600" /></a>
+          </div>
+        </details>
+        <details data-destination="cordoba">
+          <summary>Cordoba<span>Spain &middot; 3 photos</span></summary>
+          <div class="destination-photos">
+            <a href="img/travel-web/cordoba.jpg"><img src="img/travel-web/cordoba.jpg" alt="Cordoba, Spain" loading="lazy" decoding="async" width="800" height="600" /></a>
+            <a href="img/travel-web/cordoba2.jpg"><img src="img/travel-web/cordoba2.jpg" alt="Cordoba, Spain" loading="lazy" decoding="async" width="800" height="600" /></a>
+            <a href="img/travel-web/cordoba3.jpg"><img src="img/travel-web/cordoba3.jpg" alt="Cordoba, Spain" loading="lazy" decoding="async" width="800" height="600" /></a>
+          </div>
+        </details>
+        <details data-destination="dubai">
+          <summary>Dubai<span>United Arab Emirates &middot; 3 photos</span></summary>
+          <div class="destination-photos">
+            <a href="img/travel-web/dubai.jpg"><img src="img/travel-web/dubai.jpg" alt="Dubai, United Arab Emirates" loading="lazy" decoding="async" width="800" height="600" /></a>
+            <a href="img/travel-web/dubai2.jpg"><img src="img/travel-web/dubai2.jpg" alt="Dubai, United Arab Emirates" loading="lazy" decoding="async" width="800" height="600" /></a>
+            <a href="img/travel-web/dubai3.jpg"><img src="img/travel-web/dubai3.jpg" alt="Dubai, United Arab Emirates" loading="lazy" decoding="async" width="800" height="600" /></a>
+          </div>
+        </details>
+        <details data-destination="ecuador">
+          <summary>Ecuador<span>Ecuador &middot; 2 photos</span></summary>
+          <div class="destination-photos">
+            <a href="img/travel-web/ecuador1.jpg"><img src="img/travel-web/ecuador1.jpg" alt="Ecuador, Ecuador" loading="lazy" decoding="async" width="800" height="600" /></a>
+            <a href="img/travel-web/ecuador2.jpg"><img src="img/travel-web/ecuador2.jpg" alt="Ecuador, Ecuador" loading="lazy" decoding="async" width="800" height="600" /></a>
+          </div>
+        </details>
+        <details data-destination="florence">
+          <summary>Florence<span>Italy &middot; 1 photo</span></summary>
+          <div class="destination-photos">
+            <a href="img/travel-web/florence.jpg"><img src="img/travel-web/florence.jpg" alt="Florence, Italy" loading="lazy" decoding="async" width="800" height="600" /></a>
+          </div>
+        </details>
+        <details data-destination="georgia">
+          <summary>Georgia<span>Georgia &middot; 5 photos</span></summary>
+          <div class="destination-photos">
+            <a href="img/travel-web/georgia.jpg"><img src="img/travel-web/georgia.jpg" alt="Georgia, Georgia" loading="lazy" decoding="async" width="800" height="600" /></a>
+            <a href="img/travel-web/georgi2.jpg"><img src="img/travel-web/georgi2.jpg" alt="Georgia, Georgia" loading="lazy" decoding="async" width="800" height="600" /></a>
+            <a href="img/travel-web/georgia3.jpg"><img src="img/travel-web/georgia3.jpg" alt="Georgia, Georgia" loading="lazy" decoding="async" width="800" height="600" /></a>
+            <a href="img/travel-web/georgia4.jpg"><img src="img/travel-web/georgia4.jpg" alt="Georgia, Georgia" loading="lazy" decoding="async" width="800" height="600" /></a>
+            <a href="img/travel-web/georgia5.jpg"><img src="img/travel-web/georgia5.jpg" alt="Georgia, Georgia" loading="lazy" decoding="async" width="800" height="600" /></a>
+          </div>
+        </details>
+        <details data-destination="granada">
+          <summary>Granada<span>Spain &middot; 7 photos</span></summary>
+          <div class="destination-photos">
+            <a href="img/travel-web/granada.jpg"><img src="img/travel-web/granada.jpg" alt="Granada, Spain" loading="lazy" decoding="async" width="800" height="600" /></a>
+            <a href="img/travel-web/granada2.jpg"><img src="img/travel-web/granada2.jpg" alt="Granada, Spain" loading="lazy" decoding="async" width="800" height="600" /></a>
+            <a href="img/travel-web/granada3.jpg"><img src="img/travel-web/granada3.jpg" alt="Granada, Spain" loading="lazy" decoding="async" width="800" height="600" /></a>
+            <a href="img/travel-web/granada4.jpg"><img src="img/travel-web/granada4.jpg" alt="Granada, Spain" loading="lazy" decoding="async" width="800" height="600" /></a>
+            <a href="img/travel-web/granada5.jpg"><img src="img/travel-web/granada5.jpg" alt="Granada, Spain" loading="lazy" decoding="async" width="800" height="600" /></a>
+            <a href="img/travel-web/granada6.jpg"><img src="img/travel-web/granada6.jpg" alt="Granada, Spain" loading="lazy" decoding="async" width="800" height="600" /></a>
+            <a href="img/travel-web/img_6079.jpg"><img src="img/travel-web/img_6079.jpg" alt="Granada, Spain" loading="lazy" decoding="async" width="800" height="600" /></a>
+          </div>
+        </details>
+        <details data-destination="great-wall">
+          <summary>Great Wall<span>China &middot; 1 photo</span></summary>
+          <div class="destination-photos">
+            <a href="img/travel-web/great_wall.jpg"><img src="img/travel-web/great_wall.jpg" alt="Great Wall, China" loading="lazy" decoding="async" width="800" height="600" /></a>
+          </div>
+        </details>
+        <details data-destination="hangzhou">
+          <summary>Hangzhou<span>China &middot; 1 photo</span></summary>
+          <div class="destination-photos">
+            <a href="img/travel-web/hangzhou.jpg"><img src="img/travel-web/hangzhou.jpg" alt="Hangzhou, China" loading="lazy" decoding="async" width="800" height="600" /></a>
+          </div>
+        </details>
+        <details data-destination="jamaica">
+          <summary>Jamaica<span>Jamaica &middot; 1 photo</span></summary>
+          <div class="destination-photos">
+            <a href="img/travel-web/jamaica.jpg"><img src="img/travel-web/jamaica.jpg" alt="Jamaica, Jamaica" loading="lazy" decoding="async" width="800" height="600" /></a>
+          </div>
+        </details>
+        <details data-destination="lake-garda">
+          <summary>Lake Garda<span>Italy &middot; 1 photo</span></summary>
+          <div class="destination-photos">
+            <a href="img/travel-web/lakegarda.jpg"><img src="img/travel-web/lakegarda.jpg" alt="Lake Garda, Italy" loading="lazy" decoding="async" width="800" height="600" /></a>
+          </div>
+        </details>
+        <details data-destination="los-angeles">
+          <summary>Los Angeles area, California<span>United States &middot; 2 photos</span></summary>
+          <div class="destination-photos">
+            <a href="img/travel-web/la.jpg"><img src="img/travel-web/la.jpg" alt="Los Angeles area, California, United States" loading="lazy" decoding="async" width="800" height="600" /></a>
+            <a href="img/travel-web/la2.jpg"><img src="img/travel-web/la2.jpg" alt="Los Angeles area, California, United States" loading="lazy" decoding="async" width="800" height="600" /></a>
+          </div>
+        </details>
+        <details data-destination="malaga">
+          <summary>Malaga<span>Spain &middot; 2 photos</span></summary>
+          <div class="destination-photos">
+            <a href="img/travel-web/malaga.jpg"><img src="img/travel-web/malaga.jpg" alt="Malaga, Spain" loading="lazy" decoding="async" width="800" height="600" /></a>
+            <a href="img/travel-web/malaga2.jpg"><img src="img/travel-web/malaga2.jpg" alt="Malaga, Spain" loading="lazy" decoding="async" width="800" height="600" /></a>
+          </div>
+        </details>
+        <details data-destination="mexico">
+          <summary>Mexico<span>Mexico &middot; 2 photos</span></summary>
+          <div class="destination-photos">
+            <a href="img/travel-web/mexico.jpg"><img src="img/travel-web/mexico.jpg" alt="Mexico, Mexico" loading="lazy" decoding="async" width="800" height="600" /></a>
+            <a href="img/travel-web/mexico2.jpg"><img src="img/travel-web/mexico2.jpg" alt="Mexico, Mexico" loading="lazy" decoding="async" width="800" height="600" /></a>
+          </div>
+        </details>
+        <details data-destination="milan">
+          <summary>Milan<span>Italy &middot; 1 photo</span></summary>
+          <div class="destination-photos">
+            <a href="img/travel-web/milan.jpg"><img src="img/travel-web/milan.jpg" alt="Milan, Italy" loading="lazy" decoding="async" width="800" height="600" /></a>
+          </div>
+        </details>
+        <details data-destination="munich">
+          <summary>Munich<span>Germany &middot; 1 photo</span></summary>
+          <div class="destination-photos">
+            <a href="img/travel-web/munich.jpg"><img src="img/travel-web/munich.jpg" alt="Munich, Germany" loading="lazy" decoding="async" width="800" height="600" /></a>
+          </div>
+        </details>
+        <details data-destination="muscat">
+          <summary>Muscat<span>Oman &middot; 3 photos</span></summary>
+          <div class="destination-photos">
+            <a href="img/travel-web/muscat.jpg"><img src="img/travel-web/muscat.jpg" alt="Muscat, Oman" loading="lazy" decoding="async" width="800" height="600" /></a>
+            <a href="img/travel-web/muscat2.jpg"><img src="img/travel-web/muscat2.jpg" alt="Muscat, Oman" loading="lazy" decoding="async" width="800" height="600" /></a>
+            <a href="img/travel-web/muscat3.jpg"><img src="img/travel-web/muscat3.jpg" alt="Muscat, Oman" loading="lazy" decoding="async" width="800" height="600" /></a>
+          </div>
+        </details>
+        <details data-destination="ningbo">
+          <summary>Ningbo<span>China &middot; 1 photo</span></summary>
+          <div class="destination-photos">
+            <a href="img/travel-web/ningbo.jpg"><img src="img/travel-web/ningbo.jpg" alt="Ningbo, China" loading="lazy" decoding="async" width="800" height="600" /></a>
+          </div>
+        </details>
+        <details data-destination="north-carolina">
+          <summary>North Carolina<span>United States &middot; 1 photo</span></summary>
+          <div class="destination-photos">
+            <a href="img/travel-web/north_carolina.jpg"><img src="img/travel-web/north_carolina.jpg" alt="North Carolina, United States" loading="lazy" decoding="async" width="800" height="600" /></a>
+          </div>
+        </details>
+        <details data-destination="pompeii">
+          <summary>Pompeii<span>Italy &middot; 1 photo</span></summary>
+          <div class="destination-photos">
+            <a href="img/travel-web/pompeii.jpg"><img src="img/travel-web/pompeii.jpg" alt="Pompeii, Italy" loading="lazy" decoding="async" width="800" height="600" /></a>
+          </div>
+        </details>
+        <details data-destination="rome">
+          <summary>Rome<span>Italy &middot; 2 photos</span></summary>
+          <div class="destination-photos">
+            <a href="img/travel-web/rome.jpg"><img src="img/travel-web/rome.jpg" alt="Rome, Italy" loading="lazy" decoding="async" width="800" height="600" /></a>
+            <a href="img/travel-web/rome2.jpg"><img src="img/travel-web/rome2.jpg" alt="Rome, Italy" loading="lazy" decoding="async" width="800" height="600" /></a>
+          </div>
+        </details>
+        <details data-destination="salzburg">
+          <summary>Salzburg<span>Austria &middot; 2 photos</span></summary>
+          <div class="destination-photos">
+            <a href="img/travel-web/salzburg.jpg"><img src="img/travel-web/salzburg.jpg" alt="Salzburg, Austria" loading="lazy" decoding="async" width="800" height="600" /></a>
+            <a href="img/travel-web/salzburg2.jpg"><img src="img/travel-web/salzburg2.jpg" alt="Salzburg, Austria" loading="lazy" decoding="async" width="800" height="600" /></a>
+          </div>
+        </details>
+        <details data-destination="seattle">
+          <summary>Seattle, Washington<span>United States &middot; 3 photos</span></summary>
+          <div class="destination-photos">
+            <a href="img/travel-web/seattle.jpg"><img src="img/travel-web/seattle.jpg" alt="Seattle, Washington, United States" loading="lazy" decoding="async" width="800" height="600" /></a>
+            <a href="img/travel-web/seattle2.jpg"><img src="img/travel-web/seattle2.jpg" alt="Seattle, Washington, United States" loading="lazy" decoding="async" width="800" height="600" /></a>
+            <a href="img/travel-web/seattle3.jpg"><img src="img/travel-web/seattle3.jpg" alt="Seattle, Washington, United States" loading="lazy" decoding="async" width="800" height="600" /></a>
+          </div>
+        </details>
+        <details data-destination="seville">
+          <summary>Seville<span>Spain &middot; 2 photos</span></summary>
+          <div class="destination-photos">
+            <a href="img/travel-web/seville.jpg"><img src="img/travel-web/seville.jpg" alt="Seville, Spain" loading="lazy" decoding="async" width="800" height="600" /></a>
+            <a href="img/travel-web/seville2.jpg"><img src="img/travel-web/seville2.jpg" alt="Seville, Spain" loading="lazy" decoding="async" width="800" height="600" /></a>
+          </div>
+        </details>
+        <details data-destination="sri-lanka">
+          <summary>Sri Lanka<span>Sri Lanka &middot; 4 photos</span></summary>
+          <div class="destination-photos">
+            <a href="img/travel-web/sri_lanka.jpg"><img src="img/travel-web/sri_lanka.jpg" alt="Sri Lanka, Sri Lanka" loading="lazy" decoding="async" width="800" height="600" /></a>
+            <a href="img/travel-web/srilanka2.jpg"><img src="img/travel-web/srilanka2.jpg" alt="Sri Lanka, Sri Lanka" loading="lazy" decoding="async" width="800" height="600" /></a>
+            <a href="img/travel-web/sri_lank3.jpg"><img src="img/travel-web/sri_lank3.jpg" alt="Sri Lanka, Sri Lanka" loading="lazy" decoding="async" width="800" height="600" /></a>
+            <a href="img/travel-web/sri_lank4.jpg"><img src="img/travel-web/sri_lank4.jpg" alt="Sri Lanka, Sri Lanka" loading="lazy" decoding="async" width="800" height="600" /></a>
+          </div>
+        </details>
+        <details data-destination="vienna">
+          <summary>Vienna<span>Austria &middot; 2 photos</span></summary>
+          <div class="destination-photos">
+            <a href="img/travel-web/vienna.jpg"><img src="img/travel-web/vienna.jpg" alt="Vienna, Austria" loading="lazy" decoding="async" width="800" height="600" /></a>
+            <a href="img/travel-web/vienna2.jpg"><img src="img/travel-web/vienna2.jpg" alt="Vienna, Austria" loading="lazy" decoding="async" width="800" height="600" /></a>
+          </div>
+        </details>
+        <details data-destination="washington">
+          <summary>Washington, DC<span>United States &middot; 1 photo</span></summary>
+          <div class="destination-photos">
+            <a href="img/travel-web/dc.jpg"><img src="img/travel-web/dc.jpg" alt="Washington, DC, United States" loading="lazy" decoding="async" width="800" height="600" /></a>
+          </div>
+        </details>
+        <!-- TRAVEL_ARCHIVE_END -->
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2026 Taylor Cox &middot; University of Washington
+  </footer>
+
+</body>
+</html>

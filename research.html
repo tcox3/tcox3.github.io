@@ -15,7 +15,10 @@
       <ul>
         <li><a href="index.html">About</a></li>
         <li><a href="research.html" class="active">Research</a></li>
+        <li><a href="data.html">Data</a></li>
+        <li><a href="teaching.html">Teaching</a></li>
         <li><a href="cv.html">CV</a></li>
+        <li><a href="travel.html">Travel</a></li>
       </ul>
     </div>
   </nav>
@@ -27,42 +30,93 @@
 
     <h2>Working Papers</h2>
 
-    <!-- Paper 1 -->
     <div class="paper-entry">
-      <div class="paper-title">
-        Fear the Reaper: Estimating the Effect of Drone Strikes on Terrorist Violence
-        using Bayesian Causal Forests
-      </div>
-      <div class="paper-authors">Taylor Cox and David Puelz</div>
-      <div class="paper-status">Manuscript in Preparation &middot; 2025</div>
-      <p class="paper-abstract">
-        This paper estimates the causal effect of drone strikes on subsequent terrorist violence.
-        Using Bayesian causal forests, we model heterogeneous treatment effects across strike
-        contexts, accounting for the non-random assignment of strikes and the complex temporal
-        structure of conflict data. The analysis contributes to ongoing debates about the
-        effectiveness and unintended consequences of targeted killing campaigns.
-      </p>
-      <div class="paper-links">
-        <a href="papers/Reaper_Working_2026.pdf" target="_blank">PDF</a>
+      <img class="paper-illustration" src="img/research/strength-in-numbers.png" alt="Illustration of UAVs flying in formation" />
+      <div class="paper-content">
+        <div class="paper-title">
+          Strength in Numbers? Assessing the Effectiveness of Large-Scale Drone Attacks
+          in the Russia-Ukraine War
+        </div>
+        <div class="paper-authors">Taylor Cox</div>
+        <div class="paper-status">Working Paper &middot; 2026</div>
+        <details class="paper-abstract-toggle">
+          <summary>View Abstract</summary>
+          <p class="paper-abstract">
+            Does launching more drones overwhelm air defenses? Current US defense strategy assumes
+            that affordable mass will saturate adversary interception capability, yet little
+            empirical evidence supports this claim. Using 1,941 observations of Russian drone and
+            missile attacks against Ukraine from September 2022 to November 2025, I estimate
+            beta-binomial regression models to test whether larger attacks increase per-unit weapon
+            survivability. I find that mass does not improve per-unit survival for Shahed drones;
+            launching more drones is associated with a lower proportion surviving interception,
+            suggesting that Ukrainian defenses scale effectively with attack size. Weapon type is
+            the dominant predictor of survivability, with ballistic missiles and SAMs surviving at
+            rates above 85% while loitering munitions are routinely intercepted. Theory-driven
+            phase breaks reveal that Russia's adoption of saturation tactics in September 2024
+            initially tripled Shahed survival odds, but Ukraine's deployment of interceptor drones
+            in March 2025 has progressively restored interception capability. These findings
+            complicate the airpower coercion literature by demonstrating that the physical delivery
+            of airpower, which is a prerequisite for both punishment and denial strategies, is not
+            guaranteed and does not scale linearly with the number of weapons launched.
+          </p>
+        </details>
+        <div class="paper-links">
+          <a href="papers/strength_in_numbers_2026.pdf" target="_blank">PDF</a>
+        </div>
       </div>
     </div>
 
-    <!-- Paper 2 -->
     <div class="paper-entry">
-      <div class="paper-title">
-        Assessing Efficacy of Mass Drone Attacks in the Russia-Ukraine War
+      <img class="paper-illustration" src="img/research/reaper-forest.png" alt="Illustration of a stylized forest" />
+      <div class="paper-content">
+        <div class="paper-title">
+          (Don&#39;t Fear) The Reaper: Bayesian Causal Forests and the Mixed Evidence for Drone
+          Strike Effectiveness
+        </div>
+        <div class="paper-authors">Taylor Cox and David Puelz</div>
+        <div class="paper-status">Working Paper &middot; 2026</div>
+        <details class="paper-abstract-toggle">
+          <summary>View Abstract</summary>
+          <p class="paper-abstract">
+            Do drone strikes reduce terrorist violence? Early studies of the US drone campaign in
+            Pakistan generally answer yes, but these findings depend on research designs with
+            strong assumptions about targeting decisions and baseline violence levels. This paper
+            reassesses the evidence using Bayesian causal forests, a flexible estimator designed
+            for observational settings with strong confounding and heterogeneous effects. We first
+            reanalyze two influential studies, Johnston and Sarbahi (2016) and Mir and Moore
+            (2019), and show that their original negative estimates are not recovered under BCF
+            specifications that separate baseline violence from treatment effects. We then extend
+            the analysis to a broader Pakistan panel of group-location-months from 2010 through
+            2014, using ACLED event data and an explicit selection-on-observables design. Across
+            alternative geographic scopes, outcome definitions, and treatment windows, posterior
+            intervals generally include zero and the estimated treatment effects do not consistently
+            point toward reductions in violence. Unit-level treatment-effect estimates likewise
+            provide little evidence that null average effects conceal a large subgroup of strongly
+            negative effects. The results suggest that the optimistic empirical case for drone-strike
+            effectiveness in Pakistan is more fragile than the early literature implies.
+          </p>
+        </details>
+        <div class="paper-links">
+          <a href="papers/reaper_bcf_2026.pdf" target="_blank">PDF</a>
+        </div>
       </div>
-      <div class="paper-authors">Taylor Cox</div>
-      <div class="paper-status">Working Paper</div>
-      <p class="paper-abstract">
-        This paper examines the military and strategic efficacy of mass drone strike campaigns
-        in the Russia-Ukraine War. Drawing on original data on drone attack patterns, targets,
-        and outcomes, it evaluates whether and under what conditions mass UAV campaigns achieve
-        their intended objectives, with implications for the evolving role of drone warfare in
-        conventional interstate conflict.
-      </p>
-      <div class="paper-links">
-        <a href="papers/REECAS_paper_Taylor_Cox.pdf" target="_blank">PDF</a>
+    </div>
+
+    <div class="paper-entry">
+      <img class="paper-illustration" src="img/research/choose-your-battles.png" alt="Illustration of a chess piece on a board" />
+      <div class="paper-content">
+        <div class="paper-title">
+          Choose Your Battles: How Ukrainian Drone Strikes Change Where and How Russia Fights
+        </div>
+        <div class="paper-authors">Taylor Cox</div>
+        <div class="paper-status">Research Project</div>
+        <p class="paper-abstract">
+          This project investigates how Ukrainian drone strikes shape Russian military behavior,
+          including where Russia fights and how it allocates resources across the conflict.
+        </p>
+        <div class="paper-award">
+          Ione E. Curtis Graduate Research Grant, University of Washington (2026-27)
+        </div>
       </div>
     </div>
 

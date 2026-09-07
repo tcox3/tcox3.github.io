@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Data - Taylor Cox</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="site-name">Taylor Cox</a>
+      <ul>
+        <li><a href="index.html">About</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="data.html" class="active">Data</a></li>
+        <li><a href="teaching.html">Teaching</a></li>
+        <li><a href="cv.html">CV</a></li>
+        <li><a href="travel.html">Travel</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="page">
+    <h1>Data</h1>
+
+    <h2>Russian Aerial Attacks Against Ukraine</h2>
+
+    <div class="paper-entry">
+      <div class="paper-title">Russian Missile and UAV Attacks Against Ukraine</div>
+      <p class="paper-abstract">
+        This original dataset records Russian missile and UAV attacks against Ukraine using
+        official Ukrainian Air Force reports published on Telegram. It includes 928 attack
+        events and 1,505 weapon-category observations, documenting weapons launched and
+        intercepted alongside launch, target, and interception locations. Each observation is
+        linked to its source message, providing a transparent and reproducible record for the
+        study of aerial warfare and air-defense outcomes. The dataset supports the analysis in
+        <em>Strength in Numbers? Assessing the Effectiveness of Large-Scale Drone Attacks in the
+        Russia-Ukraine War.</em>
+      </p>
+      <div class="paper-status">Available upon publication or request</div>
+    </div>
+
+    <section class="data-map-section" aria-label="Interactive aggregate map of reported attacks by oblast">
+      <div class="data-map-controls" aria-label="Map controls">
+        <div class="data-map-metric" role="group" aria-label="Map metric">
+          <button class="data-map-button active" type="button" data-metric="weapons_reported">Weapons</button>
+          <button class="data-map-button" type="button" data-metric="attack_reports">Reports</button>
+        </div>
+        <div id="weapon-filters" class="data-map-filters" aria-label="Weapon category filters"></div>
+      </div>
+      <div id="attack-map" class="attack-map" role="application" aria-label="Map of reported Russian aerial attacks by Ukrainian oblast"></div>
+      <p class="data-map-note">Bubble size represents the selected aggregate. Bubbles are positioned at oblast administrative centers, not reported strike locations.</p>
+    </section>
+  </div>
+
+  <footer>
+    &copy; 2026 Taylor Cox &middot; University of Washington
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="data-map/map-data.js"></script>
+  <script src="data-map/app.js"></script>
+</body>
+</html>
