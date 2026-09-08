@@ -28,15 +28,14 @@
 
     <h2>Russian Aerial Attacks Against Ukraine</h2>
 
-    <div class="paper-entry">
-      <div class="paper-title">Russian Missile and UAV Attacks Against Ukraine</div>
+    <div class="paper-entry data-introduction">
       <p class="paper-abstract">
         This original dataset records Russian missile and UAV attacks against Ukraine using
-        official Ukrainian Air Force reports published on Telegram. It includes 928 attack
-        events and 1,505 weapon-category observations, documenting weapons launched and
-        intercepted alongside launch, target, and interception locations. Each observation is
-        linked to its source message, providing a transparent and reproducible record for the
-        study of aerial warfare and air-defense outcomes. The dataset supports the analysis in
+        official Ukrainian Air Force reports published on Telegram. It includes 928 attack events
+        that document the number of weapons launched and intercepted alongside launch, target,
+        and interception locations. Each weapon observation is linked to its Telegram source
+        message, providing a transparent and reproducible record for the study of aerial warfare
+        and air-defense. The dataset supports the analysis in
         <em>Strength in Numbers? Assessing the Effectiveness of Large-Scale Drone Attacks in the
         Russia-Ukraine War.</em>
       </p>
@@ -47,12 +46,12 @@
       <div class="data-map-controls" aria-label="Map controls">
         <div class="data-map-metric" role="group" aria-label="Map metric">
           <button class="data-map-button active" type="button" data-metric="weapons_reported">Weapons</button>
-          <button class="data-map-button" type="button" data-metric="attack_reports">Reports</button>
+          <button class="data-map-button" type="button" data-metric="attack_reports">Attacks</button>
         </div>
         <div id="weapon-filters" class="data-map-filters" aria-label="Weapon category filters"></div>
       </div>
       <div id="attack-map" class="attack-map" role="application" aria-label="Map of reported Russian aerial attacks by Ukrainian oblast"></div>
-      <p class="data-map-note">Bubble size represents the selected aggregate. Bubbles are positioned at oblast administrative centers, not reported strike locations.</p>
+      <p class="data-map-note">Map illustrates the targets of Russian attacks against Ukraine. Bubble size represents the selected aggregate. Bubbles are positioned at target oblast administrative centers.</p>
     </section>
   </div>
 

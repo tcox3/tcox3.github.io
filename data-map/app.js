@@ -27,7 +27,7 @@ const oblastLayer = L.geoJSON(mapData.oblasts, {
 map.fitBounds(oblastLayer.getBounds(), { padding: [12, 12] });
 bubbleLayer.addTo(map);
 
-function metricLabel() { return activeMetric === "weapons_reported" ? "weapons reported" : "attack reports"; }
+function metricLabel() { return activeMetric === "weapons_reported" ? "weapons reported" : "attacks"; }
 function renderBubbles() {
   bubbleLayer.clearLayers();
   const points = mapData.points.filter(point => activeWeapons.has(point.weapon));
